@@ -1,0 +1,196 @@
+:root{
+    --gray : #111f2d ;
+    --dark : #01000f ;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: flex;
+}
+/* aside start */
+
+aside{
+    width: 100px;
+    height: 100vh;
+    background-color: var(--gray);
+    padding: 20px;
+    position: fixed;
+    overflow: auto;
+}
+
+aside .image{
+    background: url("face1.jpg") no-repeat center/cover;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: white 3px solid;
+}
+
+aside .pro{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    width: fit-content ;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+aside .item{
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+    gap: 60px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+i{
+    color: white;
+}
+    overflow: hidden;
+}
+aside .item:hover{
+    background-color: rgba(255, 255, 255, 0.304);
+}
+
+aside .item i{
+    font-size: 40px;
+}
+
+aside .logout{
+    background-color: rgba(255, 0, 0, 0.443);
+    width: calc(100% - 90px);
+    position: absolute;
+    bottom: 50px;
+}
+
+aside .item p , aside .pro h1{
+    opacity: 0;
+    white-space:nowrap;
+    overflow: hidden;
+}
+
+aside:hover{
+    width: 400px;
+    transition: 0.5s ease;
+}
+
+aside:hover .item p ,aside:hover .pro h1{
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+/* aside end */
+
+/* section start */
+
+section{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--dark);
+    padding: 10px;
+    height: fit-content;
+    margin-left: 140px;
+}
+aside:hover ~ section{
+    transition: 0.5s;
+    margin-left: 440px ;
+}
+section .dash{
+    background-color: blue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+section .dash i{
+    font-size: 25px;
+}
+
+section .profile{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    min-height: 250px;
+    
+}
+section .profile .pitem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+section .profile .pitem:hover{
+    background-color: rgba(255, 255, 255, 0.31);
+}
+section .profile .pitem i{
+    font-size: 60px;
+}
+section .profile .pitem p{
+    font-size: 25px;
+    text-align: center;
+}
+section .profile .pitem p span{
+    font-size: 30px;
+}
+
+/* section end */
+
+/* table start */
+
+table{
+    text-align: center;
+    border-spacing: 10px;
+}
+table td , table th{
+    padding: 10px;
+    border-radius: 10px;
+}
+table td{
+    background-color: var(--gray) ;
+}
+table th{
+    background-color: blue ;
+}
+.green{
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+}
+.gold{
+    background-color: gold;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* table end */
+
+@media  (max-width:1130px){
+    section .profile {
+        grid-template-columns: repeat(2,1fr);
+    }
+    aside:hover + section .profile{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width:800px){
+    section .profile{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
